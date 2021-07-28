@@ -1,7 +1,17 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-
+ bool comp(pair<int,int> p1,pair<int,int> p2){
+      if(p1.second<p2.second){
+         return true;
+      }
+      else if(p1.second==p2.second){
+         if(p1.first>p2.first){
+            return true;
+         }
+      }
+      return false;
+   }
 
 int main(){
     //********<pair>**********\\
@@ -190,25 +200,59 @@ int main(){
 	// than set in most cases, except some when collision happens
 //***********<MAP>************\\
 it also store in sorted way as key
-  map<int,int> mpp;
-    mpp.insert({1,2});  // { { 1,2  }                                 
-    mpp[2]=9;            //{2,9}
-    mpp.emplace(4,8);    ///{4,8}
-    mpp.insert({9,32});    //{9,32} }
-    for(auto it : mpp){
-       cout<<it.first<<" "<<it.second<<" ";
-    }  
-    cout<<endl;
-    cout<<mpp[4];
-    cout<<mpp[9];
-    cout<<endl;
-    auto it=mpp.find(4);
-   cout <<(*it).second;
+ // map<int,int> mpp;
+   // mpp.insert({1,2});  // { { 1,2  }                                 
+   // mpp[2]=9;            //{2,9}
+   // mpp.emplace(4,8);    ///{4,8}
+   // mpp.insert({9,32});    //{9,32} }
+   // for(auto it : mpp){
+   //    cout<<it.first<<" "<<it.second<<" ";
+   // }  
+   // cout<<endl;
+   // cout<<mpp[4];
+  //  cout<<mpp[9];
+   // cout<<endl;
+   // auto it=mpp.find(4);
+  // cout <<(*it).second;
    // lower_bound and upper_bound works exactly in the 
 	// same way as explained in the other video 
     
-   auto it1 =mpp.lower_bound(5);       
-   cout<<(*it1).second; 
+  // auto it1 =mpp.lower_bound(5);       
+   //cout<<(*it1).second; 
    // erase, swap, size, empty, are same as above 
+   //************<multimap>******
+   // everything same as map, only it can store multiple keys
+	// only mpp[key] cannot be used here 
+	
+    // multimap<int int> mmp
+    //***********<unordered ser>**********
+    //void explainUnorderedMap() {
+	// same as set and unordered_Set difference. 
+   // it take only cnstant time 
+  //}
+  
+   //vector< pair<int,int>> v ={{1,2}, {2, 1}, {4, 1},{3,2}};
+  //sort(v.begin(),v.end(),comp);
+   //for(auto it :v){
+     // cout<<it.first<<" "<<it.second<<" "; // print4 1 2 1 3 2 1 2 
+   //}
+  
+    ///********< count set bit>*********
+   // long long int num=65636565;
+    
+  // long long int cnt=  __builtin_popcountll(num);
+    //cout<<cnt; //14
+    ////*******<next permutation>*******
+    //first need to sort array
+    //string s="123";
+   // do{
+     //  cout<<s<<endl;
+   // }while(next_permutation(s.begin(),s.end()));
+   //*******<finding max num in given range>*******
+   //int a[]={1,89,56,35,454};
+   //int max=*max_element(a,a+5);
+  // cout<<max;
+
     return 0;
 }
+   
